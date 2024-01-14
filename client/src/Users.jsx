@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import editIcon from "../src/assets/edit.svg";
 import deleteIcon from "../src/assets/delete.svg";
+import addIcon from "../src/assets/add.svg";
 
 const Users = () => {
 	const [users, setusers] = useState([
@@ -49,6 +51,13 @@ const Users = () => {
 						))}
 					</tbody>
 				</table>
+
+				<div className="pt-3 mt-3">
+					<Link to="/create" className="text-white w-full d-flex align-items-center justify-content-center bg-primary px-2 py-3 rounded-2">
+						<span className="pe-2">Add User</span>
+						<img src={addIcon} alt="delete" />
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
