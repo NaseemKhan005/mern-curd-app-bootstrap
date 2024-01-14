@@ -38,10 +38,12 @@ const Users = () => {
 								<td className="pt-3">{user.age}</td>
 								<td className="text-capitalize pt-3">{user.gender}</td>
 								<td className="d-flex align-items-center gap-3">
-									<button className="bg-success d-flex align-items-center gap-1">
-										<img src={editIcon} alt="edit" />
-										<span>Edit</span>
-									</button>
+									<Link to="/update">
+										<button className="bg-success d-flex align-items-center gap-1">
+											<img src={editIcon} alt="edit" />
+											<span>Edit</span>
+										</button>
+									</Link>
 									<button className="bg-danger d-flex align-items-center gap-1">
 										<img src={deleteIcon} alt="delete" />
 										Delete
@@ -53,7 +55,10 @@ const Users = () => {
 				</table>
 
 				<div className="pt-3 mt-3">
-					<Link to="/create" className="text-white w-full d-flex align-items-center justify-content-center bg-primary px-2 py-3 rounded-2">
+					<Link
+						to="/create"
+						className="text-white w-full d-flex align-items-center justify-content-center bg-primary px-2 py-3 rounded-2"
+					>
 						<span className="pe-2">Add User</span>
 						<img src={addIcon} alt="delete" />
 					</Link>
