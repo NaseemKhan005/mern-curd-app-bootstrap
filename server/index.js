@@ -6,7 +6,13 @@ const app = express();
 const User = require("./models/Users");
 
 dotenv.config();
-app.use(cors());
+const corsOptions = {
+  origin: "https://mern-curd-app-bootstrap.vercel.app/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI);
