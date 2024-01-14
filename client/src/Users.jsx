@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import editIcon from "../src/assets/edit.svg";
 import deleteIcon from "../src/assets/delete.svg";
 import addIcon from "../src/assets/add.svg";
+import axios from "axios";
 
 const Users = () => {
-	const [users, setusers] = useState([
-		{
-			id: 1,
-			name: "Naseem Khan",
-			email: "naseemkhan@gmail.com",
-			age: 20,
-			gender: "male",
-		},
-	]);
+	const [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get("http://localhost:5000")
+			.then((response) => setUsers(response.data))
+			.catch((error) => {
+				console.error("Error fetching data:", error);
+			});
+	});
 
 	return (
 		<div className="d-flex vh-100 bg-info justify-content-center align-items-center">
-			<div className="w-75 bg-white rounded p-3 overflow-auto">
+			<div className="w-75 bg-white rounded p-3 overflow-auto vh-100">
 				<table className="table">
 					<thead>
 						<tr>
@@ -31,8 +33,8 @@ const Users = () => {
 					</thead>
 					<tbody>
 						{users.map((user) => (
-							<tr key={user.id}>
-								<th className="pt-3">{user.id}</th>
+							<tr key={user._id}>
+								<th className="pt-3">{user._id.slice(0,4)}</th>
 								<td className="text-capitalize pt-3">{user.name}</td>
 								<td className="pt-3">{user.email}</td>
 								<td className="pt-3">{user.age}</td>
@@ -59,7 +61,7 @@ const Users = () => {
 						className="text-white w-full d-flex align-items-center justify-content-center bg-primary px-2 py-3 rounded-2"
 					>
 						<span className="pe-2">Add User</span>
-						<img src={addIcon} alt="delete" />
+						<img src={addIcon} alt="add" className="bg-white rounded-5" />
 					</Link>
 				</div>
 			</div>

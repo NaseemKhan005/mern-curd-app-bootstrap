@@ -1,10 +1,34 @@
+import { useState } from "react";
+import axios from "axios";
+
 const CreateUser = () => {
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [age, setAge] = useState("");
+	const [gender, setGender] = useState("");
+
+	const Submit = (e) => {
+		e.preventDefault();
+		axios
+			.post("http://localhost:5000/createUser", {
+				name,
+				email,
+				age,
+				gender,
+			})
+			.then((result) => {
+				console.log(result.data);
+				window.location.href = "/";
+			})
+			.catch((error) => console.log(error));
+	};
+
 	return (
 		<div className="d-flex vh-100 bg-info justify-content-center align-items-center">
 			<div className="w-75 bg-white rounded p-3">
-				<form>
+				<form onSubmit={Submit}>
 					<h4 className="border-bottom pb-3 mb-3">Add User</h4>
-					
+
 					<div className="mb-3">
 						<label htmlFor="name" className="form-label">
 							Name
@@ -14,6 +38,7 @@ const CreateUser = () => {
 							className="form-control"
 							id="name"
 							placeholder="Enter your name"
+							onChange={(e) => setName(e.target.value)}
 						/>
 					</div>
 
@@ -26,6 +51,7 @@ const CreateUser = () => {
 							className="form-control"
 							id="email"
 							placeholder="Enter your email"
+							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
 
@@ -38,6 +64,7 @@ const CreateUser = () => {
 							className="form-control"
 							id="age"
 							placeholder="Enter your age"
+							onChange={(e) => setAge(e.target.value)}
 						/>
 					</div>
 
@@ -50,6 +77,7 @@ const CreateUser = () => {
 							className="form-control"
 							id="gender"
 							placeholder="Enter your gender"
+							onChange={(e) => setGender(e.target.value)}
 						/>
 					</div>
 

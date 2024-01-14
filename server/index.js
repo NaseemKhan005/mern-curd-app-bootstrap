@@ -11,10 +11,23 @@ app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI);
 
-app.post("/createUser", (req, res) => {
-	User.create(req.body)
-		.then((users) => res.status(200).json(users))
-		.catch((error) => res.status(500).json(error));
+app.get("/", async (req, res) => {
+	try {
+		const users = await User.find(); // Fetch all users from the database
+		res.status(200).json(users);
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+});
+
+app.post("/createUser", async (req, res) => {
+	try {
+		const user = await User.create(req.body);
+		const newUser = await user.save();
+		res.status(200).json(newUser);
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
 });
 
 app.listen(5000, () => console.log("Server is Running at Port 5000"));
