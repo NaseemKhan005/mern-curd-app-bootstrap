@@ -15,11 +15,26 @@ const Users = () => {
 			.catch((error) => {
 				console.error("Error fetching data:", error);
 			});
-	});
+	}, []);
+
+	const deleteUser = (id) => {
+		axios
+			.delete(`http://localhost:5000/deleteUser/${id}`)
+			.then(() => {
+				console.log("User deleted successfully!");
+			})
+			.catch((error) => {
+				console.error("Error deleting user:", error);
+			})
+			.finally(() => {
+				// This will execute regardless of success or error
+				window.location.reload();
+			});
+	};
 
 	return (
-		<div className="d-flex vh-100 bg-info justify-content-center align-items-center">
-			<div className="w-75 bg-white rounded p-3 overflow-auto vh-100">
+		<div className="d-flex vh-100 bg-primary justify-content-center align-items-center overflow-auto">
+			<div className="w-75 bg-white rounded p-3 overflow-auto">
 				<table className="table">
 					<thead>
 						<tr>
@@ -46,7 +61,10 @@ const Users = () => {
 											<span>Edit</span>
 										</button>
 									</Link>
-									<button className="bg-danger d-flex align-items-center gap-1">
+									<button
+										onClick={() => deleteUser(user._id)}
+										className="bg-danger d-flex align-items-center gap-1"
+									>
 										<img src={deleteIcon} alt="delete" />
 										Delete
 									</button>
