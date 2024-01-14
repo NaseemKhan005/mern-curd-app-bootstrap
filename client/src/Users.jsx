@@ -34,13 +34,13 @@ const Users = () => {
 					<tbody>
 						{users.map((user) => (
 							<tr key={user._id}>
-								<th className="pt-3">{user._id.slice(0,4)}</th>
+								<th className="pt-3">{user._id.slice(0, 4)}</th>
 								<td className="text-capitalize pt-3">{user.name}</td>
 								<td className="pt-3">{user.email}</td>
 								<td className="pt-3">{user.age}</td>
 								<td className="text-capitalize pt-3">{user.gender}</td>
 								<td className="d-flex align-items-center gap-3">
-									<Link to="/update">
+									<Link to={`/update/${user._id}`}>
 										<button className="bg-success d-flex align-items-center gap-1">
 											<img src={editIcon} alt="edit" />
 											<span>Edit</span>

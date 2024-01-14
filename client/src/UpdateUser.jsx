@@ -1,10 +1,50 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 const UpdateUser = () => {
+	const { id } = useParams();
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [age, setAge] = useState("");
+	const [gender, setGender] = useState("");
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:5000/getUser/${id}`)
+			.then((response) => {
+				setName(response.data.name);
+				setEmail(response.data.email);
+				setAge(response.data.age);
+				setGender(response.data.gender);
+			})
+			.catch((error) => {
+				console.error("Error fetching data:", error);
+			});
+	}, [id]);
+
+	const update = (e) => {
+		e.preventDefault();
+		axios
+			.put(`http://localhost:5000/updateUser/${id}`, {
+				name,
+				email,
+				age,
+				gender,
+			})
+			.then((result) => {
+				console.log(result.data);
+				window.location.href = "/";
+			})
+			.catch((error) => console.log(error));
+	};
+
 	return (
 		<div className="d-flex vh-100 bg-info justify-content-center align-items-center">
 			<div className="w-75 bg-white rounded p-3">
-				<form>
+				<form onSubmit={update}>
 					<h4 className="border-bottom pb-3 mb-3">Update User</h4>
-					
+
 					<div className="mb-3">
 						<label htmlFor="name" className="form-label">
 							Name
@@ -13,6 +53,8 @@ const UpdateUser = () => {
 							type="text"
 							className="form-control"
 							id="name"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
 							placeholder="Enter your name"
 						/>
 					</div>
@@ -25,6 +67,8 @@ const UpdateUser = () => {
 							type="email"
 							className="form-control"
 							id="email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 							placeholder="Enter your email"
 						/>
 					</div>
@@ -37,6 +81,8 @@ const UpdateUser = () => {
 							type="number"
 							className="form-control"
 							id="age"
+							value={age}
+							onChange={(e) => setAge(e.target.value)}
 							placeholder="Enter your age"
 						/>
 					</div>
@@ -49,6 +95,8 @@ const UpdateUser = () => {
 							type="text"
 							className="form-control"
 							id="gender"
+							value={gender}
+							onChange={(e) => setGender(e.target.value)}
 							placeholder="Enter your gender"
 						/>
 					</div>
