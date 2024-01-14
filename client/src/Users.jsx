@@ -17,7 +17,7 @@ const Users = () => {
 
 	return (
 		<div className="d-flex vh-100 bg-info justify-content-center align-items-center">
-			<div className="w-75 bg-white rounded p-3">
+			<div className="w-75 bg-white rounded p-3 overflow-auto">
 				<table className="table">
 					<thead>
 						<tr>
@@ -53,7 +53,6 @@ const Users = () => {
 						))}
 					</tbody>
 				</table>
-
 				<div className="pt-3 mt-3">
 					<Link
 						to="/create"
