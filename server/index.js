@@ -7,9 +7,9 @@ const User = require("./models/Users");
 
 dotenv.config();
 const corsOptions = {
-  origin: "https://mern-curd-app-bootstrap.vercel.app/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true
+	origin: "https://mern-curd-app-bootstrap.vercel.app/",
+	methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+	credentials: true,
 };
 
 app.use(cors(corsOptions));

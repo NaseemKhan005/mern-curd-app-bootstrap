@@ -7,10 +7,11 @@ import axios from "axios";
 
 const Users = () => {
 	const [users, setUsers] = useState([]);
+	axios.defaults.withCredentials = true;
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:5000")
+			.get("https://mern-curd-app-bootstrap-api.vercel.app")
 			.then((response) => setUsers(response.data))
 			.catch((error) => {
 				console.error("Error fetching data:", error);
@@ -19,7 +20,7 @@ const Users = () => {
 
 	const deleteUser = (id) => {
 		axios
-			.delete(`http://localhost:5000/deleteUser/${id}`)
+			.delete(`https://mern-curd-app-bootstrap-api.vercel.app/deleteUser/${id}`)
 			.then(() => {
 				console.log("User deleted successfully!");
 			})
