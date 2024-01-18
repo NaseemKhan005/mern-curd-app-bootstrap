@@ -11,7 +11,7 @@ const UpdateUser = () => {
 
 	useEffect(() => {
 		axios
-			.get(`https://mern-curd-app-bootstrap-api.vercel.app/getUser/${id}`)
+			.get(`mongodb://localhost:27017/getUser/${id}`)
 			.then((response) => {
 				setName(response.data.name);
 				setEmail(response.data.email);
@@ -26,7 +26,7 @@ const UpdateUser = () => {
 	const update = (e) => {
 		e.preventDefault();
 		axios
-			.put(`https://mern-curd-app-bootstrap-api.vercel.app/updateUser/${id}`, {
+			.put(`mongodb://localhost:27017/updateUser/${id}`, {
 				name,
 				email,
 				age,

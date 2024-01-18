@@ -27,5 +27,5 @@
 		"eslint-plugin-react-refresh": "^0.4.5",
 		"vite": "^5.0.8"
 	},
-	"proxy": "https://mern-curd-app-bootstrap-api.vercel.app"
+	"proxy": "mongodb://localhost:27017"
 }

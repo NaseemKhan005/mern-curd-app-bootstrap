@@ -10,7 +10,7 @@ const CreateUser = () => {
 	const Submit = (e) => {
 		e.preventDefault();
 		axios
-			.post("https://mern-curd-app-bootstrap-api.vercel.app/createUser", {
+			.post("mongodb://localhost:27017/createUser", {
 				name,
 				email,
 				age,

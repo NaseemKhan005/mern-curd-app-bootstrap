@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://kit.fontawesome.com/c18b08c464.js" crossorigin="anonymous"></script>
+
+  <title>Single Products-Red Store | Naseem Khan</title>
+  <style>
+    .nav-bar {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- ----------------- header starts ------------------ -->
+
+  <div class="nav-bar">
+
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="" /></a>
+    </div>
+
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="all products.html">products</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact form.html">contact</a></li>
+        <li><a href="account.html">account</a></li>
+      </ul>
+      <a href="shopping cart.html"><img src="images/cart.png" alt="" /></a>
+      <i class="fa-solid fa-bars" onclick="openNav()"></i>
+    </nav>
+
+  </div>
+  <span id="scroll">&#8593;</span>
+
+
+  <!-- ----------------- header ends ------------------ -->
+
+
+
+
+  <!-- ----------------- single product starts ------------------ -->
+  <div class="small-container">
+    <div class="row single-product">
+
+      <div class="row2 images">
+        <div class="large-img">
+          <img src="images/gallery-1.jpg" id="large-img">
+        </div>
+        <div class="small-img">
+          <img src="images/gallery-1.jpg" onclick="changeImg(this)">
+          <img src="images/gallery-2.jpg" onclick="changeImg(this)">
+          <img src="images/gallery-3.jpg" onclick="changeImg(this)">
+          <img src="images/gallery-4.jpg" onclick="changeImg(this)">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="product-details">
+          <p>home/t-shirt</p>
+          <h1>Red printed t-shirt <br>by xhr</h1>
+          <h3>$50.00</h3>
+          <select>
+            <option>select size</option>
+            <option>X</option>
+            <option>XL</option>
+            <option>XI</option>
+            <option>XII</option>
+          </select><br>
+          <input type="number" min="1" max="100" value="1">
+          <a href="shopping cart.html" class="btn">add to cart</a>
+          <h3>Product Details</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est fuga deserunt dolore nostrum
+            consequatur recusandae sint, itaque voluptate praesentium facere cumque aperiam dolorem consequuntur quaerat
+            tempora commodi quae temporibus.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- ----------------- single product ends------------------ -->
+
+
+
+
+
+
+
+  <!-- ----------------- related products starts ------------------ -->
+
+  <div class="small-container">
+
+    <div class="title-2">
+      <h2>Related Products</h2>
+      <p>View More</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-4">
+        <img src="images/product-3.jpg" alt="" />
+        <p>Puma grey sports shoes</p>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>$95.00</p>
+      </div>
+      <div class="col-4">
+        <img src="images/product-4.jpg" alt="" />
+        <p>Puma grey sports shoes</p>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>$95.00</p>
+      </div>
+
+      <div class="col-4">
+        <img src="images/product-9.jpg" alt="" />
+        <p>Puma grey sports shoes</p>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>$95.00</p>
+      </div>
+
+      <div class="col-4">
+        <img src="images/product-6.jpg" alt="" />
+        <p>Puma grey sports shoes</p>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <p>$95.00</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ----------------- related products ends ------------------ -->
+
+
+
+
+
+  <!-- ----------------- footer starts ------------------ -->
+  <div class="footer">
+    <div class="row">
+      <div class="app-store col-4">
+        <h3>download our app</h3>
+        <p>download app for android and ios mobile phone</p>
+        <div class="apps">
+          <img src="images/app-store.png" alt="">
+          <img src="images/play-store.png" alt="">
+        </div>
+      </div>
+
+      <div class="logo col-4">
+        <img src="images/logo-white.png" alt="" id="header">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, distinctio! </p>
+      </div>
+
+      <div class="links col-4">
+        <h3>useful Links</h3>
+        <a href="#">coupons</a><br>
+        <a href="#">blog post</a><br>
+        <a href="#">return policy</a><br>
+        <a href="#">join attribute</a><br>
+      </div>
+
+      <div class="follow col-4">
+        <h3>follow us</h3>
+        <a href="https://www.facebook.com/profile.php?id=100017192357822"><i class="fa fa-brand fa-facebook"></i>
+          facebook</a><br>
+        <a href="https://twitter.com/NaseemK69128903"><i class="fa fa-brand fa-twitter"></i> twitter</a><br>
+        <a href="https://www.instagram.com/naseem_khan005/"><i class="fa fa-brand fa-instagram"></i> instagram</a><br>
+        <a href="https://www.youtube.com/@webtechgyan"><i class="fa fa-brand fa-youtube"></i> youtube</a><br>
+      </div>
+      </footer>
+
+      <div class="footer-end">
+        <hr>
+        <p>copyright © <span id="year"></span> 💗 made by<span> Naseem Khan</span></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ----------------- footer ends ------------------ -->
+
+
+  <script src="Js/script.js"></script>
+
+</body>
+
+</html>

@@ -11,7 +11,7 @@ const Users = () => {
 
 	useEffect(() => {
 		axios
-			.get("https://mern-curd-app-bootstrap-api.vercel.app")
+			.get("mongodb://localhost:27017/crud-app")
 			.then((response) => setUsers(response.data))
 			.catch((error) => {
 				console.error("Error fetching data:", error);
@@ -20,7 +20,7 @@ const Users = () => {
 
 	const deleteUser = (id) => {
 		axios
-			.delete(`https://mern-curd-app-bootstrap-api.vercel.app/deleteUser/${id}`)
+			.delete(`mongodb://localhost:27017/crud-app/deleteUser/${id}`)
 			.then(() => {
 				console.log("User deleted successfully!");
 			})

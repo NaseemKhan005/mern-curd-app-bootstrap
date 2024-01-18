@@ -1,21 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 const User = require("./models/Users");
 
 dotenv.config();
-const corsOptions = {
-	origin: "https://mern-curd-app-bootstrap.vercel.app",
-	methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-	credentials: true,
-};
 
-app.use(cors(corsOptions));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost:27017/crud-app");
 
 // fetching all users
 app.get("/", async (req, res) => {

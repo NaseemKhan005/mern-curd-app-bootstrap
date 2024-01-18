@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://kit.fontawesome.com/c18b08c464.js" crossorigin="anonymous"></script>
+
+    <title>Red Store | Ecomerece Website | Naseem Khan</title>
+    <style>
+        .nav-bar {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-us {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 80px 0;
+            margin-bottom: 130px;
+        }
+
+        .col-2 {
+            flex-basis: 40%;
+        }
+
+        .map{
+            width: 100%;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input,
+        textarea {
+            outline: none;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .col-2{
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ----------------- header starts ------------------ -->
+
+    <div class="nav-bar">
+
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all products.html">products</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact form.html">contact</a></li>
+                <li><a href="account.html">account</a></li>
+            </ul>
+            <a href="shopping cart.html"><img src="images/cart.png" alt="" /></a>
+            <i class="fa-solid fa-bars" onclick="openNav()"></i>
+        </nav>
+
+    </div>
+
+    <span id="scroll">&#8593;</span>
+    <!-- ----------------- header ends ------------------ -->
+
+
+    <!-- ----------------- contact form starts ------------------ -->
+    <div class="small-container">
+        <div class="row contact-us">
+            <div class="col-2">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212685.85747352112!2d73.35382001508789!3d33.59968607051946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1660757662555!5m2!1sen!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form">
+
+                    <div class="form-btn">
+                        <button type="button" class="toggle-btn" onclick="loginFunction()">login</button>
+                        <button type="button" class="toggle-btn" onclick="registerFunction()">register</button>
+                        <span id="toggle-line"></span>
+                    </div>
+
+                    <form>
+                        <div class="col-2" id="login-form">
+                            <div class="login-form input-fields">
+                                <input type="text" placeholder="User name">
+                                <input type="password" placeholder="Password">
+                                <button type="button">Login</button>
+                                <span>Forgot password</span>
+                            </div>
+                        </div>
+
+                        <div class="col-2 " id="register-form">
+                            <div class="register-form input-fields">
+                                <input type="text" placeholder="User name">
+                                <input type="email" placeholder="Your Email">
+                                <input type="password" placeholder="Password">
+                                <button type="button">register</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------- contact form ends ------------------ -->
+
+
+
+
+
+    <!-- ----------------- footer starts ------------------ -->
+    <div class="footer">
+        <div class="row">
+            <div class="app-store col-4">
+                <h3>download our app</h3>
+                <p>download app for android and ios mobile phone</p>
+                <div class="apps">
+                    <img src="images/app-store.png" alt="">
+                    <img src="images/play-store.png" alt="">
+                </div>
+            </div>
+
+            <div class="logo col-4">
+                <img src="images/logo-white.png" alt="" id="header">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, distinctio! </p>
+            </div>
+
+            <div class="links col-4">
+                <h3>useful Links</h3>
+                <a href="#">coupons</a><br>
+                <a href="#">blog post</a><br>
+                <a href="#">return policy</a><br>
+                <a href="#">join attribute</a><br>
+            </div>
+
+            <div class="follow col-4">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/profile.php?id=100017192357822"><i
+                        class="fa fa-brand fa-facebook"></i>
+                    facebook</a><br>
+                <a href="https://twitter.com/NaseemK69128903"><i class="fa fa-brand fa-twitter"></i> twitter</a><br>
+                <a href="https://www.instagram.com/naseem_khan005/"><i class="fa fa-brand fa-instagram"></i>
+                    instagram</a><br>
+                <a href="https://www.youtube.com/@webtechgyan"><i class="fa fa-brand fa-youtube"></i> youtube</a><br>
+            </div>
+            </footer>
+
+            <div class="footer-end">
+                <hr>
+                <p>copyright © <span id="year"></span> 💗 made by<span> Naseem Khan</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ----------------- footer ends ------------------ -->
+
+
+    <script src="Js/script.js"></script>
+</body>
+
+</html>
